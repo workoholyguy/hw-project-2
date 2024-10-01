@@ -1,0 +1,148 @@
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.appContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px; /* Added better spacing */
+  /* border: 2px solid white; */
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  /* background-color: white; */
+}
+
+.questionCardContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* gap: 10px; */
+  /* border: 2px solid blue; */
+  width: 100%; /* Ensures it uses full width */
+  padding: 1%;
+}
+
+.questionCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid black;
+  margin: 1%;
+  /* padding: 2%; */
+  border-radius: 12px;
+  min-width: 600px;
+  max-width: 600px;
+  min-height: 300px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  background-color: lightblue;
+  /* Default background if needed */
+  position: relative;
+  width: 300px; /* You can adjust this */
+  height: 200px; /* Adjust this as well */
+  perspective: 1000px; /* Perspective for 3D flip */
+}
+
+.card-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Prevents back side from showing until flipped */
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+  box-sizing: border-box;
+  transition: transform 0.6s; /* Animation duration */
+}
+
+/* Front Side Styling */
+.card-side.front {
+}
+
+/* Back Side Styling */
+.card-side.back {
+  transform: rotateY(180deg); /* Hide the back initially */
+}
+
+/* Flip the card */
+.questionCard.flipped .front {
+  transform: rotateY(180deg);
+}
+
+.questionCard.flipped .back {
+  transform: rotateY(0deg);
+  /* Reveal the back */
+}
+
+.questionCard.flipped .back {
+  transform: rotateY(0deg);
+  /* Reveal the back */
+}
+
+.questionCard h2 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  margin: 0;
+}
+
+.btn-reveal-answer {
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+}
+
+.hidden {
+  display: none !important; /* Ensure it overrides inline styles */
+}
+
+.questionCard button {
+  border: 2px solid white;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  background-color: #faebd7;
+  color: #000;
+  background-image: url(https://miro.medium.com/v2/resize:fit:1100/format:webp/1*WGaKti_VLbb4_bBZQkm_sA.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  /* Ensure the background covers at least the viewport height */
+  width: 100vw;
+}
+
+.appHeader {
+  background-color: azure;
+  border-radius: 12px;
+  padding: 1%;
+}
+.appHeader p {
+  font-size: large;
+  font-weight: bold;
+}
